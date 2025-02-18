@@ -22,7 +22,7 @@ class SelfAttention(nn.Module):
         self.row_dim = row_dim
         self.col_dim = col_dim
 
-    def forward(self, token_encodings: torch.tensor):
+    def forward(self, token_encodings: torch.tensor) -> torch.tensor:
         q = self.w_query(token_encodings) # out_size: (3, 2)
         k = self.w_key(token_encodings)   # out_size: (3, 2)
         v = self.w_value(token_encodings) # out_size: (3, 2)
